@@ -30,6 +30,7 @@ nav ul {
 nav ul li {
   font-size: 16px;
   cursor: pointer;
+  transition: all 0.3s;
 }
 
 nav ul li:hover {
@@ -53,6 +54,84 @@ main img {
   border-radius: 50%;
   max-width: 400px;
   width: 100%;
+  animation: seesaw 4s infinite linear;
+}
+
+main img:hover {
+  animation-play-state: paused;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes translate {
+  0% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(200px);
+  }
+
+  75% {
+    transform: translateX(-200px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale {
+  50% {
+    transform: scale(0.5);
+  }
+}
+
+@keyframes seesaw {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(30deg);
+  }
+
+  75% {
+    transform: rotate(-30deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes translate-scale-seesaw {
+  0% {
+    transform: translateX(0) scale(1) rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(200px) scale(0.5) rotate(30deg);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  75% {
+    transform: translateX(-200px) scale(0.5) rotate(-30deg);
+  }
+
+  100% {
+    transform: translateX(0) scale(1) rotate(0deg);
+  }
 }
 
 main section {
@@ -68,17 +147,38 @@ main section {
   background-color: lightgray;
   cursor: pointer;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
 .secret-button.show {
   font-size: 18px;
   padding: var(--m);
+  /* animation: blink 4s infinite linear; */
 }
 
 .secret-button:hover {
   background-color: rgb(180, 180, 180);
-  color: black;
 }
+
+/* .secret-button.show:hover {
+  animation-play-state: paused;
+}
+
+@keyframes blink {
+  0% {
+    background-color: var(--primary--dim);
+    color: white;
+  }
+
+  50% {
+    background-color: gray;
+  }
+
+  100% {
+    background-color: var(--primary--dim);
+    color: white;
+  }
+} */
 
 .secret-container {
   max-width: 300px;

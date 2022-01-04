@@ -57,6 +57,7 @@ main img {
   max-width: 400px;
   width: 100%;
   animation: seesaw 4s infinite linear;
+  transition: all 0.3s;
 }
 
 main img:hover {
@@ -205,4 +206,14 @@ main section {
 
 .hidden {
   display: none;
+}
+
+@media (max-width: 800px) {
+  nav ul {
+    display: none;
+  }
+
+  main img {
+    max-width: 250px;
+  }
 }

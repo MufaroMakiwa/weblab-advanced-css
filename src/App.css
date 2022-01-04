@@ -142,7 +142,7 @@ main img:hover {
 }
 
 main section {
-  margin-top: var(--xxxl);
+  margin: var(--xxxl) 0;
   width: 100%;
   padding: var(--m);
 }
@@ -161,10 +161,34 @@ main section {
   font-size: 18px;
   padding: var(--m);
   /* animation: blink 4s infinite linear; */
+  position: relative;
 }
 
 .secret-button:hover {
   background-color: rgb(180, 180, 180);
+}
+
+.secret-button.show::after {
+  content: "Click me";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: fit-content;
+  padding: var(--s);
+  border-radius: var(--xs);
+  text-align: center;
+  pointer-events: none;
+  background: rgb(226, 226, 226);
+  font-weight: normal;
+  font-size: 16px;
+  transition: all 0.2s 0.2s;
+  transform: scale(0);
+}
+
+.secret-button.show:hover::after {
+  transform: scale(1);
 }
 
 /* .secret-button.show:hover {

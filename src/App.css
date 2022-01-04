@@ -1,0 +1,106 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary);
+  padding: var(--m);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.8);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+}
+
+nav h2 {
+  margin: 0;
+  color: white;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  gap: var(--xxl);
+  color: white;
+}
+
+nav ul li {
+  font-size: 16px;
+  cursor: pointer;
+}
+
+nav ul li:hover {
+  color: lightgray;
+  transform: scale(1.1);
+}
+
+.u-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  margin-top: calc(var(--nav-height) + var(--xxxl));
+}
+
+main img {
+  border-radius: 50%;
+  max-width: 400px;
+  width: 100%;
+}
+
+main section {
+  margin-top: var(--xxxl);
+  width: 100%;
+  padding: var(--m);
+}
+
+.secret-button {
+  border-radius: var(--s);
+  border: none;
+  color: black;
+  background-color: lightgray;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.secret-button.show {
+  font-size: 18px;
+  padding: var(--m);
+}
+
+.secret-button:hover {
+  background-color: rgb(180, 180, 180);
+  color: black;
+}
+
+.secret-container {
+  max-width: 300px;
+  width: 100%;
+  background-color: whitesmoke;
+  border: 1px solid lightgray;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+  border-radius: var(--s);
+  padding: var(--l);
+}
+
+.secret-container p {
+  margin: 0 0 var(--l) 0;
+  font-size: 24px;
+}
+
+.secret-button.hide {
+  font-size: 16px;
+  padding: var(--s) var(--l);
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}

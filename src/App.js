@@ -22,7 +22,7 @@ const App = () => {
 
         <button>Reveal A Secret</button>
         <div>
-          <p>My name is Corgi</p>
+          <p>My name is Corgi, and I have beautiful eyes. When you look at them, I know you will just fall in love with me; everyone does.</p>
           <button>Close</button>
         </div>
 

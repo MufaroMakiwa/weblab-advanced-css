@@ -1,9 +1,12 @@
 import './App.css';
 import { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Corgi from "./assets/corgi.jpg";
 
 const App = () => {
   const [displaySecret, setDisplaySecret] = useState(false);
+  const [displayMenu, setDisplayMenu] = useState(false);
 
   const handleClick = (tab) => {
     alert(`You have clicked the CatbookClub ${tab} tab`);
@@ -11,6 +14,10 @@ const App = () => {
 
   const toggleSecret = (value) => {
     setDisplaySecret(value);
+  }
+
+  const toggleMenu = () => {
+    setDisplayMenu(value => !value);
   }
 
   return (
@@ -23,6 +30,11 @@ const App = () => {
           <li onClick={() => handleClick("Team")}>Team</li>
           <li onClick={() => handleClick("Gallery")}>Gallery</li>
         </ul>
+
+        <button
+          onClick={() => toggleMenu()}>
+          <FontAwesomeIcon icon={displayMenu ? faTimes : faBars}/>
+        </button>
       </nav>
 
       <main className="u-flex">

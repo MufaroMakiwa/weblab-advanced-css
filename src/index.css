@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,600");
+
 :root {
   --primary: #396dff;
   --primary--dim: #6987db;
@@ -23,4 +25,6 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 300;
 }

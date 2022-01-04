@@ -1,5 +1,5 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Corgi from "./assets/corgi.jpg";
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
   return (
     <div>
       <nav>
-        <h2>CatbookClub</h2>
+        <h1>CatbookClub</h1>
         <ul>
           <li onClick={() => handleClick("Home")}>Home</li>
           <li onClick={() => handleClick("About")}>About</li>
@@ -29,12 +29,12 @@ const App = () => {
         <img src={Corgi} alt="corgi"/>
         <section className="u-flex">
           <button 
-            className={`${displaySecret ? 'hidden' : ''} secret-button show`}
+            className={`secret-button show ${displaySecret ? 'hidden' : ''}`}
             onClick={() => toggleSecret(true)}>
-            Reveal A Secret
+            Reveal My Secret
           </button>
 
-          <div className={`${!displaySecret ? 'hidden' : ''} u-flex secret-container`}>
+          <div className={`u-flex secret-container ${!displaySecret ? 'hidden' : ''}`}>
             <p>My name is Corgi</p>
 
             <button 

@@ -6,7 +6,7 @@ const App = () => {
   const [displaySecret, setDisplaySecret] = useState(false);
 
   const handleClick = (tab) => {
-    alert(`You have clicked the ${tab} tab`);
+    alert(`You have clicked the CatbookClub ${tab} tab`);
   }
 
   const toggleSecret = (value) => {

@@ -28,7 +28,29 @@ const App = () => {
       <main className="u-flex">
         <img src={Corgi} alt="corgi"/>
         <section className="u-flex">
-          <button 
+
+          {!displaySecret ?
+            (
+              <button 
+                className="secret-button show"
+                onClick={() => toggleSecret(true)}>
+                Reveal My Secret
+              </button>
+            ) 
+            :
+            (
+              <div className="u-flex secret-container">
+                <p>My name is Corgi</p>
+                <button 
+                  className="secret-button hide"
+                  onClick={() => toggleSecret(false)}>
+                  Close
+                </button>
+
+              </div>
+            )
+          }
+          {/* <button 
             className={`secret-button show ${displaySecret ? 'hidden' : ''}`}
             onClick={() => toggleSecret(true)}>
             Reveal My Secret
@@ -43,7 +65,7 @@ const App = () => {
               Close
             </button>
 
-          </div>
+          </div> */}
         </section>
       </main>
     </div>

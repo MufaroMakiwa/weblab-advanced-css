@@ -29,7 +29,7 @@ const App = () => {
         <img src={Corgi} alt="corgi"/>
         <section className="u-flex">
 
-          {!displaySecret ?
+          {/* {!displaySecret ?
             (
               <button 
                 className="secret-button show"
@@ -49,8 +49,8 @@ const App = () => {
 
               </div>
             )
-          }
-          {/* <button 
+          } */}
+          <button 
             className={`secret-button show ${displaySecret ? 'hidden' : ''}`}
             onClick={() => toggleSecret(true)}>
             Reveal My Secret
@@ -65,7 +65,7 @@ const App = () => {
               Close
             </button>
 
-          </div> */}
+          </div>
         </section>
       </main>
     </div>

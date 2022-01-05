@@ -169,7 +169,7 @@ main section {
 }
 
 .secret-button.show::after {
-  content: "Click me";
+  content: attr(data-tooltip);
   position: absolute;
   top: 120%;
   left: 0;

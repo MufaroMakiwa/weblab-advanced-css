@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Corgi from "./assets/corgi.jpg";
@@ -7,6 +7,7 @@ import Corgi from "./assets/corgi.jpg";
 const App = () => {
   const [displaySecret, setDisplaySecret] = useState(false);
   const [displayMenu, setDisplayMenu] = useState(false);
+  const [tooltip, setTooltip] = useState("Click me");
 
   const handleClick = (tab) => {
     alert(`You have clicked the CatbookClub ${tab} tab`);
@@ -19,6 +20,23 @@ const App = () => {
   const toggleMenu = () => {
     setDisplayMenu(value => !value);
   }
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const labels = ["Click me", "Come on", "Do it"];
+      
+      setTooltip(prevTooltip => {
+        const currentIndex = labels.indexOf(prevTooltip);
+        const nextIndex = (currentIndex + 1) % labels.length;
+        return labels[nextIndex];
+      });   
+    }, 1000);
+
+    // clean up the interval
+    return () => clearInterval(interval);
+  }, [])
+
 
   return (
     <div>
@@ -64,6 +82,7 @@ const App = () => {
           } */}
           <button 
             className={`secret-button show ${displaySecret ? 'hidden' : ''}`}
+            data-tooltip={tooltip}
             onClick={() => toggleSecret(true)}>
             Reveal My Secret
           </button>
